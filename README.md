@@ -3,6 +3,10 @@
 ## Project Overview
 This project focuses on analyzing a real-world e-commerce dataset to derive actionable business insights. Using PostgreSQL, I performed data cleaning, exploratory data analysis (EDA), and complex query-based analysis to solve 10 key business challenges, including sales trends, customer behavior, and product performance.
 
+## Dataset
+The dataset used for this analysis is the "Online Retail Dataset," which is publicly available on Kaggle. You can access and download the raw data here: 
+[Download Dataset Here](https://www.kaggle.com/datasets/carrie1/ecommerce-data)
+
 ## Objectives
 1. **Database Setup**: Importing raw CSV data into a PostgreSQL table.
 2. **Data Cleaning**: Handling encoding issues and filtering out invalid/refunded transactions to ensure data accuracy.
