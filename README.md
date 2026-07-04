@@ -36,7 +36,7 @@ This project focuses on analyzing a real-world e-commerce dataset to derive acti
 	  ORDER BY 2 DESC;
 ```
 
--- 2. **Top 10 Spending Customers**
+2. **Top 10 Spending Customers**
 ```PostgreSQL
 
 	  SELECT customer_id,
@@ -48,7 +48,7 @@ This project focuses on analyzing a real-world e-commerce dataset to derive acti
 	  LIMIT 10;
 ```
 
--- 3. **Monthly Sales Growth**
+3. **Monthly Sales Growth**
 ```PostgreSQL
 
 	  WITH monthly_sales AS(
@@ -62,7 +62,7 @@ This project focuses on analyzing a real-world e-commerce dataset to derive acti
 	  FROM monthly_sales;
 ```
 
--- 4. **Product Frequency**
+4. **Product Frequency**
 ```PostgreSQL
 
 	  SELECT stock_code,COUNT(invoice_no) AS total_orders
