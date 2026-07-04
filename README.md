@@ -27,15 +27,17 @@ This project focuses on analyzing a real-world e-commerce dataset to derive acti
 ## SQL Queries Highlights
 
  1. **Revenue per Country**
+```PostgreSQL
 
       SELECT country,
 	         SUM(quantity * unit_price) AS total_revenue
       FROM e_commerce
 	  GROUP BY 1
 	  ORDER BY 2 DESC;
-
+```
 
 -- 2. **Top 10 Spending Customers**
+```PostgreSQL
 
 	  SELECT customer_id,
 	         SUM(quantity*unit_price) AS total_spend
@@ -44,9 +46,10 @@ This project focuses on analyzing a real-world e-commerce dataset to derive acti
 	  GROUP BY 1
 	  ORDER BY 2 DESC
 	  LIMIT 10;
-
+```
 
 -- 3. **Monthly Sales Growth**
+```PostgreSQL
 
 	  WITH monthly_sales AS(
 	  SELECT EXTRACT(MONTH FROM invoice_date) AS month,
@@ -57,15 +60,16 @@ This project focuses on analyzing a real-world e-commerce dataset to derive acti
 	         LAG(total_revenue) OVER(ORDER BY month),
 			 total_revenue - LAG(total_revenue) OVER(ORDER BY month) AS difference
 	  FROM monthly_sales;
-
+```
 
 -- 4. **Product Frequency**
+```PostgreSQL
 
 	  SELECT stock_code,COUNT(invoice_no) AS total_orders
 	  FROM e_commerce
 	  GROUP BY 1
 	  ORDER BY 2 DESC;)
-
+```
 
     
 - **Monthly Sales Growth**: Used `LAG()` window function to calculate month-over-month revenue differences.
